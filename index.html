@@ -131,6 +131,14 @@
             margin-bottom: 1.5rem;
         }
 
+        .venue-map {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
         /* Details Grid */
         .details-grid {
             display: grid;
@@ -229,8 +237,9 @@
                 <div class="venue-name">Château de Granoupiac</div>
                 <div class="venue-address">34725 Saint-André-de-Sangonis, France</div>
                 <p>Un cadre authentique et enchanteur au cœur des vignes, parfait pour célébrer notre amour.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Chateau+de+Granoupiac+Saint+Andre+de+Sangonis"
-                    target="_blank" class="btn">Voir sur la carte</a>
+                <img class="venue-map"
+                    src='https://api.woosmap.com/maps/static?lat=43.6080&lng=3.7313&zoom=8.92&width=500&height=400&retina=yes&key=woos-82a6b6a5-c540-3d5b-9d9b-a9358ec495b0&stylers=%5B%7B%22featureType%22%3A%22water%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23001194%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.background%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23ffffff%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.man_made%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22on%22%7D%2C%7B%22color%22%3A%22%23ebebeb%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.landcover%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.park%22%2C%22elementType%22%3A%22all%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.education%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.sports_complex%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%5D&markers={"lat":43.6467,"lng":3.5092,"url":"http://balon.pernelle.eu/wedding_marker2.PNG"}'
+                    alt="Carte du lieu" />
             </div>
         </section>
 
