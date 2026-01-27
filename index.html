@@ -11,378 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #8A9A5B;
-            /* Sage Green */
-            --secondary-color: #D4AF37;
-            /* Gold */
-            --bg-color: #F9F7F2;
-            /* Cream Lightened */
-            --text-color: #2C2C2C;
-            --white: #ffffff;
-            --overlay-color: rgba(0, 0, 0, 0.4);
-        }
-
-        /* --- Global Reset & Typography --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            overflow-x: hidden;
-            font-weight: 300;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-            font-weight: 400;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        /* --- Utilities --- */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 6rem 20px;
-            position: relative;
-        }
-
-        /* Fade In Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- Components --- */
-
-        /* Premium Button */
-        .btn {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--primary-color);
-            padding: 14px 40px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 50px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-            z-index: -1;
-        }
-
-        .btn:hover {
-            color: var(--white);
-            border-color: var(--primary-color);
-        }
-
-        .btn:hover::before {
-            width: 100%;
-        }
-
-        /* Section Title */
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header::after {
-            content: '❧';
-            display: block;
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-top: 1rem;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background-image: linear-gradient(var(--overlay-color), var(--overlay-color)), url('hero.png');
-            background-attachment: fixed;
-            /* Parallax */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1.2s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.6rem;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1.2s ease-out 0.3s backwards;
-        }
-
-        .hero .date {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            border-top: 1px solid var(--secondary-color);
-            border-bottom: 1px solid var(--secondary-color);
-            padding: 15px 30px;
-            color: #f0f0f0;
-            animation: fadeInUp 1.2s ease-out 0.6s backwards;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* --- Timeline (Programme) --- */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 1px;
-            background-color: var(--secondary-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 20px 40px;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            text-align: left;
-        }
-
-        .timeline-icon {
-            position: absolute;
-            top: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border: 1px solid var(--secondary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            z-index: 2;
-            box-shadow: 0 0 0 8px var(--bg-color);
-            /* Mask line behind */
-        }
-
-        .timeline-item:nth-child(odd) .timeline-icon {
-            right: -25px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-icon {
-            left: -25px;
-        }
-
-        .timeline-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .timeline-time {
-            display: block;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .timeline-desc {
-            font-style: italic;
-            color: #666;
-        }
-
-        /* --- Venue Section --- */
-        .venue-card {
-            background: var(--white);
-            border-radius: 4px;
-            /* More distinct shape */
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            /* Softer, deeper shadow */
-            text-align: center;
-            padding: 0;
-        }
-
-        .venue-logo {
-            width: 150px;
-            height: auto;
-            margin: 3rem auto 1rem;
-            display: block;
-        }
-
-        .venue-info {
-            padding: 2rem 3rem 3rem;
-        }
-
-        .venue-map-container {
-            width: 100%;
-            height: 400px;
-            background-color: #eee;
-            position: relative;
-        }
-
-        .venue-map {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* --- RSVP Section --- */
-        .rsvp-wrapper {
-            background: var(--white);
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-radius: 4px;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1a1a;
-            color: #888;
-            text-align: center;
-            padding: 4rem 2rem;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 20px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(odd) {
-                text-align: left;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-icon,
-            .timeline-item:nth-child(even) .timeline-icon {
-                left: -5px;
-                right: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -394,99 +23,108 @@
     </header>
 
     <div class="container">
-        <section id="intro">
-            <h2 class="section-title">Notre Histoire Continue</h2>
-            <p>Nous sommes ravis de vous inviter à célébrer notre union. Rejoignez-nous pour une journée inoubliable
-                remplie d'amour, de rires et de bonheur.</p>
+        <section id="intro" class="fade-in">
+            <header class="section-header">
+                <h2>Notre Histoire Continue</h2>
+            </header>
+            <div class="wrapper">Nous sommes ravis de vous inviter à célébrer notre union. Rejoignez-nous pour une
+                journée inoubliable
+                remplie d'amour, de rires et de bonheur.</div>
         </section>
+    </div>
 
+    <div class="container">
         <section id="venue" class="fade-in">
             <header class="section-header">
                 <h2>Le Lieu</h2>
             </header>
-
-            <div class="venue-card">
-                <img class="venue-logo" src="https://chateau-granoupiac.com/wp-content/uploads/2024/10/cropped-Logo.png"
-                    alt="Château de Granoupiac Logo">
-
-                <div class="venue-info">
-                    <h3 class="venue-name" style="margin-bottom: 0;">Château de Granoupiac</h3>
-                    <p class="venue-address" style="margin-bottom: 1rem;">34725 Saint-André-de-Sangonis, France</p>
-                    <p style="font-style: italic; color: #555;">Un cadre authentique et enchanteur au cœur des vignes.
-                    </p>
-                </div>
-
-                <div class="venue-map-container">
-                    <img class="venue-map"
-                        src='https://api.woosmap.com/maps/static?lat=43.6080&lng=3.7313&zoom=8.92&width=500&height=400&retina=yes&key=woos-82a6b6a5-c540-3d5b-9d9b-a9358ec495b0&stylers=%5B%7B%22featureType%22%3A%22water%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23001194%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.background%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23ffffff%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.man_made%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22on%22%7D%2C%7B%22color%22%3A%22%23ebebeb%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.landcover%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.park%22%2C%22elementType%22%3A%22all%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.education%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.sports_complex%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%5D&markers={"lat":43.6467,"lng":3.5092,"url":"http://balon.pernelle.eu/wedding_marker.PNG"}'
-                        alt="Carte du lieu" />
-                </div>
-
-                <div style="padding: 2rem; background: #f9f9f9;">
+            <div class="wrapper">
+                <p style="margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: bold;">Château de Granoupiac</p>
+                <p style="font-style: italic; color: #666; margin-bottom: 1.5rem; font-size: 1.2rem;">34725
+                    Saint-André-de-Sangonis, France</p>
+                <p>Un cadre authentique et enchanteur au cœur des vignes, parfait pour célébrer notre amour.</p>
+                <img class="venue-map"
+                    src='https://api.woosmap.com/maps/static?lat=43.6080&lng=3.7313&zoom=8.92&width=500&height=400&retina=yes&key=woos-82a6b6a5-c540-3d5b-9d9b-a9358ec495b0&stylers=%5B%7B%22featureType%22%3A%22water%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23001194%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.background%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22color%22%3A%22%23ffffff%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.man_made%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22on%22%7D%2C%7B%22color%22%3A%22%23ebebeb%22%7D%5D%7D%2C%7B%22featureType%22%3A%22landscape.natural.landcover%22%2C%22elementType%22%3A%22geometry.fill%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.park%22%2C%22elementType%22%3A%22all%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.education%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%2C%7B%22featureType%22%3A%22point_of_interest.sports_complex%22%2C%22elementType%22%3A%22geometry%22%2C%22stylers%22%3A%5B%7B%22visibility%22%3A%22off%22%7D%5D%7D%5D&markers={"lat":43.6467,"lng":3.5092,"url":"http://balon.pernelle.eu/wedding_marker.PNG"}'
+                    alt="Carte du lieu" />
+                <div style="text-align: center; margin-top: 1.5rem;">
                     <a href="https://www.google.com/maps/search/?api=1&query=Château+de+Granoupiac+Saint-André-de-Sangonis"
                         target="_blank" class="btn">Voir sur Google Maps</a>
                 </div>
             </div>
         </section>
 
+    </div>
+
+    <div class="container">
+
         <section id="programme" class="fade-in">
             <header class="section-header">
                 <h2>Le Programme</h2>
-                <h3 style="font-size: 1rem; color: #888; margin-top: 10px;">Les grands moments de cette journée</h3>
             </header>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">👰</div>
-                    <div class="timeline-content">
-                        <h3>Cérémonie</h3>
-                        <span class="timeline-time">16h30</span>
-                        <p class="timeline-desc">Échange des vœux et célébration de notre union.</p>
+            <div class="wrapper">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">👰</div>
+                        <div class="timeline-content">
+                            <h3>Cérémonie</h3>
+                            <span class="timeline-time">16h30</span>
+                            <p class="timeline-desc">Échange des vœux et célébration de notre union.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">🥂</div>
-                    <div class="timeline-content">
-                        <h3>Cocktail</h3>
-                        <span class="timeline-time">18h00</span>
-                        <p class="timeline-desc">Rafraîchissements et bouchées dans la Cour d'honneur.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🥂</div>
+                        <div class="timeline-content">
+                            <h3>Cocktail</h3>
+                            <span class="timeline-time">18h00</span>
+                            <p class="timeline-desc">Rafraîchissements et bouchées dans la Cour d'honneur.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">🍽️</div>
-                    <div class="timeline-content">
-                        <h3>Dîner</h3>
-                        <span class="timeline-time">20h00</span>
-                        <p class="timeline-desc">Repas gastronomique servi dans la Salle de réception.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🍽️</div>
+                        <div class="timeline-content">
+                            <h3>Dîner</h3>
+                            <span class="timeline-time">20h00</span>
+                            <p class="timeline-desc">Repas gastronomique servi dans la Salle de réception.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">💃</div>
-                    <div class="timeline-content">
-                        <h3>Soirée Dansante</h3>
-                        <span class="timeline-time">22h30</span>
-                        <p class="timeline-desc">Ouverture de bal et fête jusqu'au bout de la nuit !</p>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">💃</div>
+                        <div class="timeline-content">
+                            <h3>Soirée Dansante</h3>
+                            <span class="timeline-time">22h30</span>
+                            <p class="timeline-desc">Ouverture de bal et fête jusqu'au bout de la nuit !</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-icon">🥐</div>
-                    <div class="timeline-content">
-                        <h3>Brunch</h3>
-                        <span class="timeline-time">Dimanche 11h00</span>
-                        <p class="timeline-desc">Réveil en douceur et brunch convivial pour clore le week-end.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🥐</div>
+                        <div class="timeline-content">
+                            <h3>Brunch</h3>
+                            <span class="timeline-time">Dimanche 11h00</span>
+                            <p class="timeline-desc">Réveil en douceur et brunch convivial pour clore le week-end.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <div style="text-align: center; margin-bottom: 4rem;">
-            <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">Besoin d'un hébergement ?</p>
-            <a href="hebergement.html" class="btn">Voir les hébergements à proximité</a>
-        </div>
+    <div class="container">
+        <section id="hebergement" class="fade-in">
+            <header class="section-header">
+                <h2>Hébergement</h2>
+            </header>
+            <div class="wrapper">
+                <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">Vous avez besoin d'un hébergement ? Vous
+                    trouverez
+                    quelques suggestions sur cette page.</p>
+                <a href="hebergement.html" class="btn">Découvrir les hébergements à proximité</a>
+            </div>
+        </section>
     </div>
 
     <div class="container">
@@ -494,22 +132,19 @@
             <header class="section-header">
                 <h2>Réponse (RSVP)</h2>
             </header>
+            <div class="wrapper">
+                <p style="margin-bottom: 1rem;">Nous serions ravis de vous compter parmi
+                    nous.
+                </p>
+                <p style="margin-bottom: 1rem;">Merci de confirmer votre présence avant le
+                    <strong>30 Avril 2026</strong>.
+                </p>
 
-            <div class="rsvp-wrapper">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <p style="margin-bottom: 1rem; font-size: 1.1rem;">Nous serions ravis de vous compter parmi nous.
-                    </p>
-                    <p style="margin-bottom: 2rem; color: #666;">Merci de confirmer votre présence avant le <strong>30
-                            Avril 2026</strong>.</p>
-
-                    <p style="margin-bottom: 1rem;">Répondez par email : <a href="mailto:maeva.pernelle.balon@gmail.com"
-                            style="color: var(--primary-color); font-weight: bold; border-bottom: 1px solid var(--secondary-color);">maeva.pernelle.balon@gmail.com</a>
-                    </p>
-                    <p style="margin-bottom: 2rem;">Ou via le formulaire en ligne :</p>
-
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5EOmU8xhLVyo8hgWf3LFbKRYysIRpgfB4H9jZeJjsl5Fjnw/viewform"
-                        target="_blank" class="btn">Ouvrir le formulaire</a>
-                </div>
+                <p style="margin-bottom: 1rem;">Répondez par email : <a href="mailto:maeva.pernelle.balon@gmail.com"
+                        style="color: var(--primary-color); font-weight: bold; border-bottom: 1px solid var(--secondary-color);">maeva.pernelle.balon@gmail.com</a>
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5EOmU8xhLVyo8hgWf3LFbKRYysIRpgfB4H9jZeJjsl5Fjnw/viewform"
+                    target="_blank" class="btn">Ou via le formulaire en ligne</a>
             </div>
         </section>
     </div>
