@@ -289,7 +289,7 @@ a {
 }
 
 .container::after {
-    content: '❧';
+    content: '♥';
     display: block;
     font-size: 2rem;
     color: var(--secondary-color);
@@ -305,6 +305,73 @@ a {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: block;
+}
+
+/* --- Accommodation Page --- */
+.hero-small {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 20px;
+    text-align: center;
+}
+
+.hero-small h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.accommodation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.accommodation-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.accommodation-card:hover {
+    transform: translateY(-5px);
+}
+
+.accommodation-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.accommodation-details {
+    margin-bottom: 1.5rem;
+    list-style: none;
+}
+
+.accommodation-details li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.accommodation-details li span {
+    margin-right: 10px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 /* --- Footer --- */
