@@ -257,6 +257,13 @@ a {
     stroke: var(--primary-color);
 }
 
+.timeline-icon-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(54%) sepia(11%) saturate(726%) hue-rotate(298deg) brightness(92%) contrast(87%);
+}
+
 .timeline-item:nth-child(odd) .timeline-icon {
     right: -25px;
 }
