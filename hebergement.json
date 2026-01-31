@@ -1,8 +1,8 @@
 {
   "accommodations": [
-        {
+    {
       "name": "Villa les Tamaris",
-      "capacity": "10 Personnes",
+      "capacity": [10],
       "price": "~220€ / nuit",
       "walkingDistance": "Route dangereuse pour pietons",
       "drivingDistance": "6 min en voiture",
@@ -11,7 +11,7 @@
     },
     {
       "name": "Appartement 4 personnes",
-      "capacity": "4 Personnes",
+      "capacity": [4],
       "price": "~110€ / nuit",
       "walkingDistance": "Route dangereuse pour pietons",
       "drivingDistance": "6 min en voiture",
@@ -19,8 +19,26 @@
       "photo": "assets/hebergement/002.png"
     },
     {
+      "name": "Chambre d'Hôtes Lo Componaïro",
+      "capacity": [2],
+      "price": "~80€ / nuit",
+      "walkingDistance": "Route dangereuse pour pietons",
+      "drivingDistance": "10 min en voiture",
+      "link": "https://via.eviivo.com/LoComponairo34230?noofrooms=1&startDate=2026-09-05&endDate=2026-09-06&pce=&adults1=2&children1=0",
+      "photo": "assets/hebergement/006.png"
+    },
+    {
+      "name": "Appartement à Aniane",
+      "capacity": [8],
+      "price": "~150€ / nuit",
+      "walkingDistance": "Route dangereuse pour pietons",
+      "drivingDistance": "12 min en voiture",
+      "link": "https://www.airbnb.fr/rooms/1429741373864993486?adults=8&check_in=2026-09-05&check_out=2026-09-06&search_mode=regular_search&source_impression_id=p3_1769861536_P3ClVYSZk77xL54C&previous_page_section_name=1000&federated_search_id=32b6499a-758c-4cc9-bdb6-01392f781b18",
+      "photo": "assets/hebergement/007.png"
+    },
+    {
       "name": "Studio - L'Olivier",
-      "capacity": "2 Personnes",
+      "capacity": [2],
       "price": "~64€ / nuit",
       "walkingDistance": "2km - 25 min à pied",
       "drivingDistance": "6 min en voiture",
@@ -29,7 +47,7 @@
     },
     {
       "name": "Chambre - Chez Jo",
-      "capacity": "2 Personnes",
+      "capacity": [2],
       "price": "~55€ / nuit",
       "walkingDistance": "2km - 25 min à pied",
       "drivingDistance": "6 min en voiture",
@@ -38,13 +56,12 @@
     },
     {
       "name": "Meuble maison vigneronne",
-      "capacity": "2-4 Personnes",
+      "capacity": [2, 4],
       "price": "~72€ / nuit",
       "walkingDistance": "1,8km - 20 min à pied",
       "drivingDistance": "5 min en voiture",
       "link": "https://www.booking.com/hotel/fr/appartement-maison-vigneronne.fr.html?aid=356980&label=gog235jc-10CAsoTUIGbWhvdGVsSA1YA2hNiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALBu-LLBsACAdICJDU2ZmEzNzRmLWI3NzgtNDkyMS1iOTIzLWFlYTcxMzgxYWUzMdgCAeACAQ&sid=0aad4fd045715998f309b83a79884c49&checkin=2026-09-05&checkout=2026-09-06&dest_id=-1463717&dest_type=city&dist=0&do_availability_check=1&group_adults=4&group_children=0&hp_avform=1&hp_group_set=0&no_rooms=1&origin=hp&sb_price_type=total&src=hotel&type=total&#group_recommendation",
       "photo": "assets/hebergement/005.png"
     }
-
   ]
 }
