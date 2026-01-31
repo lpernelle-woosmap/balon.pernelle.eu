@@ -357,6 +357,14 @@ a {
     transform: translateY(-5px);
 }
 
+.accommodation-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
 .accommodation-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
